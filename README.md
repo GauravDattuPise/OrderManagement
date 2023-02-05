@@ -4,13 +4,16 @@ A simple Order Management System
 
 Spring boot application with the below requirements :
 ● Creation of Customers
+
 ● Customers can create orders. For simplicity, once an order is created, thats final.
 There is no order status like created, payment done, completed etc. It is
 assumed that customer has already made the payment while creating the order.
+
 ● Customers are categorized as regular, gold, platinum
 ● By default, a customer is regular.
 ○ Customer is promoted to gold when he has placed 10 orders
 ○ Customer is promoted to platinum when he has placed 20 orders
+
 ● Gold = 10% discount, platinum = 20% discount
 ● When a customer creates an order, if he is a gold customer, automatically 10%
 discount is applied on the order. 20% for platinum customers.
