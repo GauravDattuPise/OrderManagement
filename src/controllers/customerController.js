@@ -1,4 +1,3 @@
-//  cName, cOrders, category, totalDiscount
 
 const mongoose = require('mongoose')
 const customerModel = require('../models/customerModel')

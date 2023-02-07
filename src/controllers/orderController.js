@@ -18,6 +18,7 @@ const createOrder = async function (req, res) {
         if (!mongoose.isValidObjectId(customerId))
             return res.status(400).send({ status: false, message: "Please provide valid customer id" })
 
+
         if (!orderAmount)
             return res.status(400).send({ status: false, message: "orderAmount is required" })
 
