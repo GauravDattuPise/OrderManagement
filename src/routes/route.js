@@ -9,5 +9,9 @@ router.get("/customer/:customerId", getCustomer)
 
 router.post("/createOrder", createOrder)
 
+router.all(function(req,res){
+    res.status(400).send({status : false, message : "Invalid path"})
+})
+
 
 module.exports = router

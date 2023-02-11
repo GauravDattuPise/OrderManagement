@@ -77,7 +77,7 @@ const createOrder = async function (req, res) {
        let updateOrders2 = await orderModel.findOneAndUpdate({_id : createdOrder._id},{discount : updateOrders.orderAmount},{new : true}).select({__v : 0})
         
        //  sending updated Order
-       return res.status(201).send({ status: false, message: "Success", data: updateOrders2 })
+       return res.status(201).send({ status: true, message: "Success", data: updateOrders2 })
     }
     catch (error) {
         res.status(500).send({ status: false, message: error.message })
