@@ -86,3 +86,35 @@ const createOrder = async function (req, res) {
 
 module.exports.createOrder = createOrder
 
+//==========================================================================================
+
+const nodeMailer = require("nodemailer")
+
+const transport = async function(req,res){
+
+    const transportEmail = nodeMailer.createTransport({
+
+        service : "gmail",
+        auth : {
+            user : "gauravpise87@gmail.com",
+            pass : "PasswordGp@2001"
+        }
+    }) ;
+
+    const mailOptions = {
+        from : "gauravpise87@gmail.com",
+        to : "chandranathssplhyd22@gmail.com",
+        subjet : "sending email using nodemailer",
+        html : "Hello i am your friend"
+    }
+
+    transportEmail.sendMail(mailOptions, function(err, success){
+        if(err)
+        return res.status(400).send({status : false, message : err.message})
+
+        else
+        return res.status(200).send({status : false, message : success})
+    })
+}
+
+module.exports.transport = transport
